@@ -18,7 +18,6 @@ import { Role } from '../enum/role.enum';
 import { ApiError } from '../filter/api.error';
 import { UserRepository } from '../users/user.repository';
 import { UserLoginDto } from './dto/user.dto';
-
 @Injectable()
 export class AuthService {
   @InjectRepository(UserRepository)
@@ -89,6 +88,6 @@ export class AuthService {
       roles: currentUser.roles,
     };
 
-    return { ...payload, token: 'access_token' };
+    return { ...payload, token: this.jwtService.sign(payload) };
   }
 }

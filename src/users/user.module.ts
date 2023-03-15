@@ -6,7 +6,6 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { AuthModule } from '../auth/auth.module';
 import { AuthService } from '../auth/auth.service';
 import { RolesGuard } from '../auth/guards/roles.guard';
-import { LoggerService } from '../logger/custom.logger';
 import { ProductRepository } from '../product/product.repository';
 import { UserSubscriber } from './subscriber/user.subscriber';
 import { UserController } from './user.controller';
@@ -17,7 +16,6 @@ import { UserService } from './user.service';
   imports: [
     TypeOrmModule.forFeature([UserRepository, ProductRepository]),
     ConfigService,
-    LoggerService,
     forwardRef(() => AuthModule),
     JwtModule.registerAsync({
       imports: [ConfigModule],
