@@ -31,7 +31,7 @@ export class UserController {
   constructor(private readonly userService: UserService) {}
 
   @Get()
-  @Roles(Role.Admin)
+  // @Roles(Role.Admin)
   async index(@Query() pageOptionsDto: PageOptionsDto): Promise<PageDto<User>> {
     return this.userService.findAllAndPaging(pageOptionsDto);
   }

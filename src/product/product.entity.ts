@@ -27,14 +27,14 @@ export class Product extends BaseEntity {
   @CreateDateColumn({
     default: `now()`,
     nullable: true,
-    name: 'createdDat',
+    name: 'createdDate',
   })
   createdAt: string;
 
   @UpdateDateColumn({
     default: `now()`,
     nullable: true,
-    name: 'updatedDat',
+    name: 'updatedDate',
   })
   updatedAt: string;
 }

@@ -88,6 +88,11 @@ export class AuthService {
       roles: currentUser.roles,
     };
 
-    return { ...payload, token: this.jwtService.sign(payload) };
+    return {
+      ...payload,
+      token: this.jwtService.sign(payload, {
+        secret: this.configService.get('jwtSecretKey'),
+      }),
+    };
   }
 }

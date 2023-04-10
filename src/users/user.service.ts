@@ -17,6 +17,7 @@ export class UserService extends BaseService<User, UserRepository> {
   private productRepository: ProductRepository;
 
   constructor(
+    @InjectRepository(UserRepository)
     repository: UserRepository,
     logger: LoggerService,
     @Inject(forwardRef(() => AuthService))
