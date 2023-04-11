@@ -22,6 +22,7 @@ import { ProductModule } from './product/product.module';
 import { SchedulesModule } from './schedules/schedules.module';
 import { UserRepository } from './users/user.repository';
 import { ValidatorModule } from './validators/validator.module';
+import { CategoriesModule } from './categories/categories.module';
 
 @Module({
   imports: [
@@ -45,6 +46,7 @@ import { ValidatorModule } from './validators/validator.module';
     DatabaseModule,
     ProductModule,
     SchedulesModule,
+    CategoriesModule,
   ],
   controllers: [],
   providers: [
